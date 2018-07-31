@@ -2,12 +2,18 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+
 	<title>CryptLook</title>
-	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	
 	<link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' rel="stylesheet">
-	<link href="https://cdn.jsdelivr.net/npm/vuetify/dist/vuetify.min.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Material+Icons" rel="stylesheet">
+
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+
 	<link href="../lib/styles.css" rel="stylesheet">
+	<link href="../lib/all.css" rel="stylesheet">
+	<link href="../lib/vuetify.min.css" rel="stylesheet">
+
 </head>
 <body>
 	<div id="app">
@@ -17,7 +23,7 @@
 					<v-list dense>
 						<v-list-tile @click="">
 							<v-list-tile-action>
-								<v-icon>dashboard</v-icon>
+								<v-icon>home</v-icon>
 							</v-list-tile-action>
 							<v-list-tile-content>
 								<v-list-tile-title>Home</v-list-tile-title>
@@ -28,7 +34,7 @@
 								<v-icon>dashboard</v-icon>
 							</v-list-tile-action>
 							<v-list-tile-content>
-								<v-list-tile-title>My Portfolio</v-list-tile-title>
+								<v-list-tile-title>Portfolio</v-list-tile-title>
 							</v-list-tile-content>
 						</v-list-tile>
 						<v-list-tile @click="">
@@ -36,7 +42,7 @@
 								<v-icon>dashboard</v-icon>
 							</v-list-tile-action>
 							<v-list-tile-content>
-								<v-list-tile-title>My Wallets</v-list-tile-title>
+								<v-list-tile-title>Wallets</v-list-tile-title>
 							</v-list-tile-content>
 						</v-list-tile>
 						<v-list-tile @click="">
@@ -44,7 +50,7 @@
 								<v-icon>dashboard</v-icon>
 							</v-list-tile-action>
 							<v-list-tile-content>
-								<v-list-tile-title>Simple View</v-list-tile-title>
+								<v-list-tile-title>Favorites</v-list-tile-title>
 							</v-list-tile-content>
 						</v-list-tile>
 						<v-list-tile @click="">
@@ -72,35 +78,42 @@
 				<v-content>
 					<v-container fluid fill-height>
 						<v-layout row>
-							<v-flex lg2 class="marginize">
+							<v-flex lg2 md2 class="marginize">
 								<v-card class="">
 									<v-card-title><p class="headline">Coins</p></v-card-title>
 									<v-divider class="lrMarg"></v-divider>
-									<v-layout row>
-										<v-card-textd class="sixteenPlus marginize tPads">Bitcoin</v-card-textd><v-spacer></v-spacer><v-btn class="marginize noPads"> + </v-btn>
+									<v-layout v-for="(item, key) in coins" row class="halfPads lrMarg">
+										<v-card-text class="sixteenPlus">{{ key }}</v-card-text>
+										<v-spacer></v-spacer>
+										<v-btn class="" small fab>
+											<v-icon small>favorite_border</v-icon>
+										</v-btn>
 									</v-layout>
+									<v-divider class="lrMarg"></v-divider>
 								</v-card>
 							</v-flex>
-							<v-flex lg2 class="marginize">
+							<v-flex lg2 md2 class="marginize">
 								<v-card>
 									<v-card-title><p class="headline">Coins</p></v-card-title>
 									<v-divider class="lrMarg"></v-divider>
 								</v-card>
 							</v-flex>
-							<v-flex lg9 class="marginize">
+							<v-flex lg8 class="marginize">
 								<v-card>
 									<v-card-title><p class="headline">Info</p></v-card-title>
 									<v-divider class="lrMarg"></v-divider>
 									<v-container>
-										<v-btn>Graph</v-btn>
-										<v-btn>Historical</v-btn>
-										<v-btn>Extra</v-btn>
-										<v-btn>Favorite</v-btn>
-										<v-btn>Stream</v-btn>
-										<v-btn>General</v-btn>
-										<v-btn>Set Market</v-btn>
-										<v-btn>Add to portfolio</v-btn>
-										<v-btn>Exchange Rate</v-btn>
+										<v-layout row wrap justify-center>
+											<v-btn>Graph</v-btn>
+											<v-btn>Historical</v-btn>
+											<v-btn>Extra</v-btn>
+											<v-btn>Favorite</v-btn>
+											<v-btn>Stream</v-btn>
+											<v-btn>General</v-btn>
+											<v-btn>Set Market</v-btn>
+											<v-btn>Add to portfolio</v-btn>
+											<v-btn>Exchange Rate</v-btn>
+										</v-layout>
 									</v-container>
 								</v-card>
 							</v-flex>
@@ -113,8 +126,12 @@
 			</v-app>
 		</template>
 	</div>
-	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/vuetify/dist/vuetify.js"></script>
-	<script src="main.js"></script>
+
+	<script src="/lib/vue.js"></script>
+	<script src="/lib/vuetify.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
 </body>
+	<script src="/helper/api.js" type="module"></script>
+	<script src="main.js" type="module"></script>
 </html>
