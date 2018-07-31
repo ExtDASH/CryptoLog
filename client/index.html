@@ -79,13 +79,13 @@
 					<v-container fluid fill-height>
 						<v-layout row>
 							<v-flex lg2 md2 class="marginize">
-								<v-card class="">
+								<v-card>
 									<v-card-title><p class="headline">Coins</p></v-card-title>
 									<v-divider class="lrMarg"></v-divider>
-									<v-layout v-for="(item, key) in coins" row class="halfPads lrMarg">
-										<v-card-text class="sixteenPlus">{{ key }}</v-card-text>
+									<v-layout v-for="item in coins" :key="item.FullName" row class="lrMarg">
+										<v-card-text>{{ item }}</v-card-text>
 										<v-spacer></v-spacer>
-										<v-btn class="" small fab>
+										<v-btn small fab>
 											<v-icon small>favorite_border</v-icon>
 										</v-btn>
 									</v-layout>

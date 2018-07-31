@@ -1,22 +1,26 @@
 import api from './helper/api.js'
 
-const main = new Vue({
+const app = new Vue({
 	el: "#app",
 	data: {
 		drawer: false,
 		fab: false,
-		coins: {},
+		coins: [],
 		exchanges: null,
 		userFavs: [],
 	},
 	created: function(){
-		$.get('https://min-api.cryptocompare.com/data/all/coinlist',function(obj){
-			this.coins = obj.Data
-			console.log(this.coins)
+		$.get('https://min-api.cryptocompare.com/data/all/coinlist', function(obj){
+			for (var item in obj.Data){
+				app.coins.push(obj.Data[item].FullName)
+				if(app.coins.length >= 5)
+					break
+			}
 		})
+
 	},
 })
 
 
-export default main
+export default app
 
