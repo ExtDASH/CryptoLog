@@ -1,0 +1,64 @@
+.marginize{
+	margin: 1rem 1rem 1rem 1rem;
+}
+
+.pads {
+	padding: 1rem;
+}
+
+.halfPads{
+	padding: .5rem;
+}
+
+.noDis{
+	display: none;
+}
+
+.sixteenPlus{
+	font-size: 1.25rem;
+}
+
+.bMarg{
+	margin-bottom: 1rem;
+}
+
+.tMarg{
+	margin-top: 1rem;
+}
+
+.rMarg{
+	margin-right: 1rem;
+}
+
+.lmarg{
+	margin-left: 1rem;
+}
+
+.lrMarg{
+	margin-left: 1rem;
+	margin-right: 1rem;
+}
+
+.tPads{
+	padding-top: .5rem;
+}
+
+.bPads{
+	padding-bottom: 1rem;
+}
+
+.rPads{
+	padding-right: 1rem;
+}
+
+.lPads{
+	padding-left: 1rem;
+}
+
+.noMarg{
+	margin: 0;
+}
+
+.noPads{
+	padding: 0 0 0 0;
+}

@@ -80,10 +80,10 @@
 						<v-layout row>
 							<v-flex lg2 md2 class="marginize">
 								<v-card>
-									<v-card-title><p class="headline">Coins</p></v-card-title>
+									<v-card-title><p class="headline noMarg">Coins</p></v-card-title>
 									<v-divider class="lrMarg"></v-divider>
-									<v-layout v-for="item in coins" :key="item.FullName" row class="lrMarg">
-										<v-card-text>{{ item }}</v-card-text>
+									<v-layout v-for="item in fsyms" :key="item.Symbol" row class="lrMarg">
+										<v-btn v-on:click.native="selection(item)" round>{{ item }}</v-btn>
 										<v-spacer></v-spacer>
 										<v-btn small fab>
 											<v-icon small>favorite_border</v-icon>
@@ -94,13 +94,13 @@
 							</v-flex>
 							<v-flex lg2 md2 class="marginize">
 								<v-card>
-									<v-card-title><p class="headline">Coins</p></v-card-title>
+									<v-card-title><p class="headline noMarg">Coins</p></v-card-title>
 									<v-divider class="lrMarg"></v-divider>
 								</v-card>
 							</v-flex>
 							<v-flex lg8 class="marginize">
 								<v-card>
-									<v-card-title><p class="headline">Info</p></v-card-title>
+									<v-card-title><p class="headline noMarg">Info</p><v-chip close dark small v-if="userSel.length" v-model="userSel" v-for="thing in userSel">{{ thing }}</v-chip></v-card-title>
 									<v-divider class="lrMarg"></v-divider>
 									<v-container>
 										<v-layout row wrap justify-center>
