@@ -100,7 +100,15 @@
 							</v-flex>
 							<v-flex lg8 class="marginize">
 								<v-card>
-									<v-card-title><p class="headline noMarg">Info</p><v-chip close dark small v-if="userSel.length" v-model="userSel" v-for="thing in userSel">{{ thing }}</v-chip></v-card-title>
+									<v-card-title><p class="headline noMarg">Info</p></v-card-title>
+									<v-divider class="lrMarg"></v-divider>
+									<v-container>
+										<v-layout row wrap justify-space-between>
+											<p class="marginize" v-model="this.PRICES" v-for="price in PRICES">
+												{{ price }}
+											</p>
+										</v-layout>
+									</v-container>
 									<v-divider class="lrMarg"></v-divider>
 									<v-container>
 										<v-layout row wrap justify-center>
